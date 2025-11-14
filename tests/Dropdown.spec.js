@@ -8,6 +8,7 @@ test('Handle Dropdown', async ({ page }) => {
 
     //mouse hover to dropdown
     await page.locator('#country').hover();
+    
     await page.waitForTimeout(2000);
 
     await page.locator('#country').selectOption({ label: 'Canada' }); //select by label/visible text
