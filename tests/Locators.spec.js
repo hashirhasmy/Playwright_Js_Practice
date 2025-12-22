@@ -9,12 +9,12 @@ test('Loctors test', async ({page})=>{
     //page.locator('id=login2').click();
     await page.click('id=login2');
 
-    //2)css - fill username
+    //2)cssSelector - fill username
     //page.locator("input[id='loginusername']").fill('pavanol')
     //page.locator("input[id='loginusername']").type('pavanol')
     await page.fill("input[id='loginusername']", 'pavanol')
 
-    //3)css - fill password
+    //3)cssSelector - fill password
     await page.fill("input[id='loginpassword']", 'test@123')
 
     //4)xpath - click loginbutton
