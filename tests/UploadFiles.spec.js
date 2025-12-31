@@ -11,7 +11,7 @@ describe('File Upload Tests', () => {
         await page.goto('https://the-internet.herokuapp.com/upload');
 
         // Upload file
-        await page.locator('input#file-upload').setInputFiles('tests/resources/sampleFile.png');
+        await page.locator('input#file-upload').setInputFiles('tests/uploadFiles/sampleFile.png');
         //await page.setInputFiles('input#file-upload', 'tests/resources/sampleFile.txt');
 
         await page.waitForTimeout(5000);
@@ -30,8 +30,8 @@ describe('File Upload Tests', () => {
 
         // Upload multiple files
         await page.locator('input[type="file"]').setInputFiles([
-            'tests/resources/sampleFile.png',
-            'tests/resources/sampleFile1.png'
+            'tests/uploadFiles/sampleFile.png',
+            'tests/uploadFiles/sampleFile1.png'
         ]);
 
         await page.waitForTimeout(2000);
