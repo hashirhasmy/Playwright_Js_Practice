@@ -164,21 +164,4 @@ Senior QA Engineer | Test Automation Enthusiast
 
 📜 License
 
-This project is licensed under the MIT License.
-
-
----
-
-### 💡 Pro Tips (for more attraction)
-- Add **badges** (Playwright, Node.js, GitHub Actions)
-- Add your **YouTube channel link**
-- Add a **demo GIF** of tests running
-- Pin this repo on your GitHub profile
-
-If you want, I can:
-- 🔥 Add **badges**
-- 🎥 Add **GIF/demo section**
-- 🇱🇰 Customize language for Sinhala audience
-- 💼 Make it interview-ready / portfolio-ready
-
-Just say the word 😎
+This project is licensed under the MIT License
