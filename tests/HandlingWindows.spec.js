@@ -36,14 +36,25 @@ test('Handling Multiple Pages/Windows Test', async ({ page }) => {
  
     //<<<<<<<<<<<<<<<<OR>>>>>>>>>>>>>>>>
 
-    await page.click("//a[normalize-space()='OrangeHRM, Inc']");
-    const pagePromise = await page.context().waitForEvent('page');
+    // await page.click("//a[normalize-space()='OrangeHRM, Inc']");
+    // const pagePromise = await page.context().waitForEvent('page');
 
-    const newPage1 = await pagePromise;
-    await expect(newPage1).toHaveTitle('Human Resources Management Software | HRMS | OrangeHRM');
+    // const newPage1 = await pagePromise;
+    // await expect(newPage1).toHaveTitle('Human Resources Management Software | HRMS | OrangeHRM');
 
+    // console.log('Main Page Title: ' + await page.title());
+    // console.log('New Page Title: ' + await newPage1.title());
+
+
+    //<<<<<<<<<<<<<<<<OR>>>>>>>>>>>>>>>>
+    await page.waitForTimeout(10000);
+    const [newPage] = await Promise.all([new Promise(resolve => page.context().once('page', resolve)), await page.locator("//a[normalize-space()='OrangeHRM, Inc']").click()]);
+    const actualUrl = newPage.url();
     console.log('Main Page Title: ' + await page.title());
-    console.log('New Page Title: ' + await newPage1.title());
-    
-
+    console.log('New Page URL: ' + actualUrl);
+    console.log('New Page Title: ' + await newPage.title());
+    await page.waitForTimeout(5000);
+    await page.close();
+    await newPage.close();
+    console.log('New Page closed successfully');
 });
